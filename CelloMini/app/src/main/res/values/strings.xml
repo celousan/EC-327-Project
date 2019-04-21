@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CircuitBreaker</string>
+    <string name="app_title">Circuit Breaker</string>
+    <string name="button_get_started">Get Started</string>
+    <string name="button_about_us">About Us</string>
+    <string name="button_continue">Continue</string>
+    <string name="tutorial_description">You’re a synthetic biologist trying to spell out a word using a
+genetic circuit. Each letter is a protein, but they’re also activators! Your goal is to spell out the five letter word you enter using the promoters given to you.
+For each letter, choose a promoter activated by the letter that came before it. But be careful, don’t let a protein be expressed early, or your circuit will misspell the word!</string>
+    <string name="enter_word">Enter a five letter word</string>
+    <string name="gen_circuit">Generate Circuit</string>
+    <string name="button_back">Back to Home Page</string>
+    <string name="txt_about">About Us</string>
+    <string name="exit">Exit</string>
+</resources>
