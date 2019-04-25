@@ -37,8 +37,7 @@ public class EnterWord extends Activity implements View.OnClickListener {
         ebutton1.setOnClickListener(this);
 
         // The edit text has a string value set by the editText1 ID in Main.xml
-        et = (EditText) findViewById(R.id.editText1);
-        inputString = et.getText().toString();
+        et = findViewById(R.id.editText1);
     }
 
     @Override
@@ -47,18 +46,24 @@ public class EnterWord extends Activity implements View.OnClickListener {
      * that called the onClick is automatically fed in*/
     public void onClick(View v)
     {
-        //The switch statements grab the id values of the button pressed and calculates the tip accordingly
+        //The switch statements grab the id values of the button pressed
         switch(v.getId()) {
 
             case R.id.button_gen_circuit: {
-                //go to information page
-                Intent fillCircuitActivity = new Intent(EnterWord.this, FillCircuit.class);
-                fillCircuitActivity.putExtra("word", inputString);
-                startActivity(fillCircuitActivity);
+                //saves name in variable
+                inputString = et.getText().toString();
+                //go to fillCircuit page and pass inputString variable
+               openFillCircuitActivity();
             }
             default: {
                 break;
             }
         }
+    }
+
+    public void openFillCircuitActivity(){
+        Intent fillCircuitActivity = new Intent(EnterWord.this, FillCircuit.class);
+        fillCircuitActivity.putExtra("word", inputString);
+        startActivity(fillCircuitActivity);
     }
 }
