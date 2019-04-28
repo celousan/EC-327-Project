@@ -2,8 +2,10 @@ package com.example.cellomini;
 
 import android.app.Activity;
 import android.content.ClipData;
+import android.content.ClipDescription;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,7 +29,7 @@ public class FillCircuit extends Activity {
         //needs to randomize the promoter table
 
 
-        //drag and drop listeners
+        //drag listeners
 
         findViewById(R.id.input1).setOnTouchListener(new TouchListener());
         findViewById(R.id.input2).setOnTouchListener(new TouchListener());
@@ -37,12 +39,14 @@ public class FillCircuit extends Activity {
         findViewById(R.id.input6).setOnTouchListener(new TouchListener());
         findViewById(R.id.input7).setOnTouchListener(new TouchListener());
         findViewById(R.id.input8).setOnTouchListener(new TouchListener());
-        /*
+
+        //drop listeners
+
         findViewById(R.id.target2).setOnDragListener(new MyDragListener());
         findViewById(R.id.target3).setOnDragListener(new MyDragListener());
         findViewById(R.id.target4).setOnDragListener(new MyDragListener());
         findViewById(R.id.target5).setOnDragListener(new MyDragListener());
-        */
+
 
         //button to return to main activity, with alert window
 
@@ -106,6 +110,8 @@ public class FillCircuit extends Activity {
 
     //Drag and Drop Code - Allows for promoters to be inserted in circuit elements
 
+        //touch listener
+
     private class TouchListener implements View.OnTouchListener {
 
         //view keyword refers to the view that initiated movement
@@ -124,37 +130,46 @@ public class FillCircuit extends Activity {
         }
     }
 
+        //drag listener
 
-    /*
     private class MyDragListener implements View.OnDragListener {
+
         View draggedView;
         TextView dropped;
 
-        @Override
+        //call this method once drag event is dispatched to the listener
         public boolean onDrag(View view, DragEvent event) {
             switch (event.getAction()) {
                 case DragEvent.ACTION_DRAG_STARTED:
-                    draggedView = (View) event.getLocalState();
-                    dropped = (TextView) draggedView;
-                    //draggedView.setVisibility(View.INVISIBLE);
-                    break;
+                    //checks if view can accept dragged data.
+                    if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
+                        draggedView = (View) event.getLocalState();
+                        dropped = (TextView) draggedView;
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
                 case DragEvent.ACTION_DRAG_ENTERED:
-                    break;
+                    return true;
+                case DragEvent.ACTION_DRAG_LOCATION:
+                    return true;
                 case DragEvent.ACTION_DRAG_EXITED:
-                    break;
+                    return true;
                 case DragEvent.ACTION_DROP:
+                    //defines the receiving textView
                     TextView dropTarget = (TextView) view;
+                    //sets the new text data
                     dropTarget.setText(dropped.getText().toString());
-                    break;
+                    return true;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    break;
+                    return true;
                 default:
+                    Log.e("DragDrop Result","Unknown action type received by DragListener.");
                     break;
             }
-            return true;
+            return false;
         }
     }
-    */
-
 
 }
