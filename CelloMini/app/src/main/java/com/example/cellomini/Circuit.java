@@ -1,5 +1,7 @@
 package com.example.cellomini;
 
+import java.util.Random;
+
 public class Circuit {
     private Promoter[] p;
     private String str;
@@ -41,5 +43,18 @@ public class Circuit {
             counter++;
 
         return (counter == 5);
+    }
+    public Promoter[] getPromoters()
+    {
+        Random rgen = new Random();
+        Promoter[] r = p;
+        for(int i = 0; i < r.length; i++)
+        {
+            int randPos = rgen.nextInt(r.length);
+            Promoter temp = r[i];
+            r[i] = r[randPos];
+            r[randPos] = temp;
+        }
+        return r;
     }
 }

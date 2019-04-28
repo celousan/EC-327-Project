@@ -24,17 +24,17 @@ public class Promoter {
         return logic;
     }
     //returns let1
-    public char getLet1()
+    public String getLet1()
     {
-        return let1;
+        return Character.toString(let1);
     }
     //returns let2, unless it is not defined, in which case a null character is returned
-    public char getLet2()
+    public String getLet2()
     {
         if(this.getLogic())
-            return let2;
+            return Character.toString(let2);
         else
-            return '\0';
+            return "\0";
     }
     //compares the letters stored in two promoters and if they share a letter compare returns true
     public boolean compare(Promoter p)
