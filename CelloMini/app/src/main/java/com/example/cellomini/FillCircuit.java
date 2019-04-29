@@ -189,6 +189,7 @@ public class FillCircuit extends Activity {
                         if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
                             draggedView = (View) event.getLocalState();
                             dropped = (TextView) draggedView;
+                            //set draggedView as invisible
                             return true;
                         }
                         else{
