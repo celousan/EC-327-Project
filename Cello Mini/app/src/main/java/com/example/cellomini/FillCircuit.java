@@ -23,7 +23,7 @@ public class FillCircuit extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fill_circuit);
 
-        //drag listeners
+        //drag listeners - done
 
         findViewById(R.id.input1).setOnTouchListener(new TouchListener());
         findViewById(R.id.input2).setOnTouchListener(new TouchListener());
@@ -39,12 +39,13 @@ public class FillCircuit extends Activity {
         findViewById(R.id.target4).setOnTouchListener(new TouchListener());
         findViewById(R.id.target5).setOnTouchListener(new TouchListener());
 
-        //drop listeners
+        //drop listeners - done
 
         findViewById(R.id.target2).setOnDragListener(new MyDragListener());
         findViewById(R.id.target3).setOnDragListener(new MyDragListener());
         findViewById(R.id.target4).setOnDragListener(new MyDragListener());
         findViewById(R.id.target5).setOnDragListener(new MyDragListener());
+
 
         //button to return to main activity, with alert window - done
 
@@ -106,12 +107,14 @@ public class FillCircuit extends Activity {
         String temporaryText;
         int[] inputViewIds = new int[]{R.id.input1, R.id.input2, R.id.input3, R.id.input4, R.id.input5, R.id.input6, R.id.input7, R.id.input8};
         Promoter[] p = wordInput.getPromoters();
-        for (int i = 0; i < p.length; i++) {
+        for(int i = 0; i < p.length; i++)
+        {
             TextView currentInput = findViewById(inputViewIds[i]);
-            if (p[i].getLogic()) {
+            if(p[i].getLogic()) {
                 temporaryText = p[i].getLet1() + " or " + p[i].getLet2();
                 currentInput.setText(temporaryText);
-            } else {
+            }
+            else {
                 currentInput.setText(p[i].getLet1());
             }
         }
@@ -144,18 +147,20 @@ public class FillCircuit extends Activity {
     }*/
 
     //function defined to send the app back to the mainActivity - done
-    public void openActivityMain() {
+    public void openActivityMain(){
         Intent mainActivity = new Intent(FillCircuit.this, MainActivity.class);
         startActivity(mainActivity);
     }
 
     //Drag and Drop Code - Allows for promoters to be inserted in circuit elements - done
 
-    //touch listener
+        //touch listener
 
-    private class TouchListener implements View.OnTouchListener {
+        private class TouchListener implements View.OnTouchListener {
+
             //view keyword refers to the view that initiated movement
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+            public boolean onTouch(View view, MotionEvent motionEvent){
                 //if user presses on the screen, enter if (if ACTION_DOWN is true for that event)
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     ClipData draggedData = ClipData.newPlainText("", "");
@@ -167,7 +172,8 @@ public class FillCircuit extends Activity {
                     return false;
                 }
             }
-    }
+        }
+
         //drag listener
 
         private class MyDragListener implements View.OnDragListener {
@@ -180,12 +186,13 @@ public class FillCircuit extends Activity {
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_STARTED:
                         //checks if view can accept dragged data.
-                        if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
+                        if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
                             draggedView = (View) event.getLocalState();
                             dropped = (TextView) draggedView;
                             //set draggedView as invisible
                             return true;
-                        } else {
+                        }
+                        else{
                             return false;
                         }
                     case DragEvent.ACTION_DRAG_ENTERED:
@@ -203,10 +210,10 @@ public class FillCircuit extends Activity {
                     case DragEvent.ACTION_DRAG_ENDED:
                         return true;
                     default:
-                        Log.e("DragDrop Result", "Unknown action type received by DragListener.");
+                        Log.e("DragDrop Result","Unknown action type received by DragListener.");
                         break;
                 }
                 return false;
             }
-    }
-} //close bracket
+        }
+} //close class bracket
