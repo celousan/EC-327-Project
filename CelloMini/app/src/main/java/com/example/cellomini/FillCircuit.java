@@ -33,6 +33,11 @@ public class FillCircuit extends Activity {
         findViewById(R.id.input6).setOnTouchListener(new TouchListener());
         findViewById(R.id.input7).setOnTouchListener(new TouchListener());
         findViewById(R.id.input8).setOnTouchListener(new TouchListener());
+        //targets are also set as draggable so that user may change the position of used promoters
+        findViewById(R.id.target2).setOnTouchListener(new TouchListener());
+        findViewById(R.id.target3).setOnTouchListener(new TouchListener());
+        findViewById(R.id.target4).setOnTouchListener(new TouchListener());
+        findViewById(R.id.target5).setOnTouchListener(new TouchListener());
 
         //drop listeners - done
 
