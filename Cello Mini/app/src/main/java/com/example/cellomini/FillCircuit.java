@@ -91,7 +91,7 @@ public class FillCircuit extends Activity {
             public void onClick(View v) {
                 //depending on the return of the check solution method, direct to different alerts.
 
-                if(wordInput.checkSol(evaluateAnswer())){
+                if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
                     //exit returns to mainActivity, return does nothing.
 
@@ -164,7 +164,7 @@ public class FillCircuit extends Activity {
 
 
     //function defined to return a promoter array with user answers
-    public Promoter[] evaluateAnswer(){
+    public Promoter[] toPromoterArray(){
         //saves promoters in variables
         int[] targetViewIds = new int[]{R.id.target2, R.id.target3, R.id.target4, R.id.target5};
         Promoter[] ansInputs = new Promoter[4];
