@@ -85,6 +85,8 @@ public class FillCircuit extends Activity {
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //debugging option for solution
+                //Log.d("LOGIC", Boolean.toString(wordInput.checkSol(toPromoterArray())));
 
                 if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
@@ -125,6 +127,7 @@ public class FillCircuit extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             //display answer to circuit !!!!!
+                            //wordInput.getSol();
                         }
                     });
                     exitAlert.create().show();

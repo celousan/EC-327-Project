@@ -33,17 +33,18 @@ public class Circuit {
     public boolean checkSol(Promoter[] sol)
     {
         int counter = 1;
-        if((p[4].compare(sol[0])) || (p[7].compare(sol[0])))
+        if((p[4].equals(sol[0])) || (p[7].equals(sol[0])))
             counter++;
-        if((p[1].compare(sol[1])) || (p[6].compare(sol[1])))
+        if((p[0].equals(sol[1])) || (p[6].equals(sol[1])))
             counter++;
-        if((p[3].compare(sol[2])) || (p[5].compare(sol[2])))
+        if((p[3].equals(sol[2])) || (p[5].equals(sol[2])))
             counter++;
-        if((p[1].compare(sol[3])) || (p[2].compare(sol[3])))
+        if((p[1].equals(sol[3])) || (p[2].equals(sol[3])))
             counter++;
 
         return (counter == 5);
     }
+    public Promoter[] getSol(){return p;}
     public Promoter[] getPromoters()
     {
         Random rgen = new Random();
