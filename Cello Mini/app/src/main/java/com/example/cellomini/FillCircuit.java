@@ -89,12 +89,50 @@ public class FillCircuit extends Activity {
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //depending on the return of the check solution prompt different activities.
+                //depending on the return of the check solution method, direct to different alerts.
+
                 if(wordInput.checkSol(evaluateAnswer())){
-                    //alert message with congrulatory message and exit button and return button
+                    //alert message with congratulatory message, exit button and return button.
+                    //exit returns to mainActivity, return does nothing.
+
+                    AlertDialog.Builder exitAlert = new AlertDialog.Builder(FillCircuit.this);
+                    exitAlert.setTitle("Congratulations!");
+                    exitAlert.setMessage("You have solved the circuit!");
+                    exitAlert.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //return app to main activity
+                            openActivityMain();
+                        }
+                    });
+                    exitAlert.setNegativeButton("Return", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //no definition
+                        }
+                    });
+                    exitAlert.create().show();
                 }
                 else{
-                    //alert window with keep trying or display answer
+                    //alert window with fail message, keep trying or display answer buttons
+                    //keep trying does nothing, display answer calls answer function
+
+                    AlertDialog.Builder exitAlert = new AlertDialog.Builder(FillCircuit.this);
+                    exitAlert.setTitle("Oh no!");
+                    exitAlert.setMessage("It looks like your circuit is not correct!");
+                    exitAlert.setPositiveButton("Continue Game", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //no definition
+                        }
+                    });
+                    exitAlert.setNegativeButton("Show Answer", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //display answer to circuit !!!!!
+                        }
+                    });
+                    exitAlert.create().show();
                 }
 
             }
