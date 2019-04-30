@@ -76,6 +76,7 @@ public class FillCircuit extends Activity {
 
 
         //get intent from main activity - done
+
         Intent inp = getIntent();
         String word = inp.getStringExtra("word");
 
@@ -83,7 +84,7 @@ public class FillCircuit extends Activity {
 
         final Circuit wordInput = new Circuit(8, word);
 
-        //button to evaluate answer - work in progress, watch out for final declaration, may need to invoke outside logic
+        //button to evaluate answer - mostly done, still need to display answer
 
         evaluateButton = findViewById(R.id.evalButton);
         evaluateButton.setOnClickListener(new View.OnClickListener() {
