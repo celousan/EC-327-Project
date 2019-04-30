@@ -126,7 +126,7 @@ public class FillCircuit extends Activity {
                             //no definition
                         }
                     });
-                    exitAlert.setNegativeButton("Show Answer", new DialogInterface.OnClickListener() {
+                    exitAlert.setNegativeButton("Display Answer", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             //display answer to circuit !!!!!
