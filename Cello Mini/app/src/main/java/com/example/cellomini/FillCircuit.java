@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
@@ -34,13 +33,6 @@ public class FillCircuit extends Activity {
         findViewById(R.id.input6).setOnTouchListener(new TouchListener());
         findViewById(R.id.input7).setOnTouchListener(new TouchListener());
         findViewById(R.id.input8).setOnTouchListener(new TouchListener());
-        //targets are also set as draggable so that user may change the position of used promoters
-        /*under reconsideration
-        findViewById(R.id.target2).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target3).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target4).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target5).setOnTouchListener(new TouchListener());
-        */
 
         //drop listeners - done
 
@@ -93,7 +85,6 @@ public class FillCircuit extends Activity {
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //depending on the return of the check solution method, direct to different alerts.
 
                 if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
@@ -140,7 +131,7 @@ public class FillCircuit extends Activity {
                 }
 
             }
-        });
+        }); //on click listener end bracket
 
 
         //randomize the promoter table - done
@@ -228,6 +219,7 @@ public class FillCircuit extends Activity {
                     case DragEvent.ACTION_DRAG_STARTED:
                         //checks if view can accept dragged data.
                         if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
+                            //defines the dragged textview
                             draggedView = (View) event.getLocalState();
                             dropped = (TextView) draggedView;
                             return true;
