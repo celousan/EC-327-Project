@@ -163,7 +163,7 @@ public class FillCircuit extends Activity {
     }
 
 
-    //function defined to return a promoter array with user answers
+    //method defined to return a promoter array with user answers
     public Promoter[] toPromoterArray(){
         //saves promoters in variables
         int[] targetViewIds = new int[]{R.id.target2, R.id.target3, R.id.target4, R.id.target5};
