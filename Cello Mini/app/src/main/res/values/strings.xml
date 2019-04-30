@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CircuitBreaker</string>
-    <string name="app_title">Circuit Breaker</string>
+    <string name="app_title">synbio logic</string>
     <string name="button_get_started">Get Started</string>
-    <string name="button_about_us">About Us</string>
+    <string name="button_about_us">About</string>
     <string name="button_continue">Continue</string>
     <string name="tutorial_description">You’re a synthetic biologist trying to spell out a word using a
 genetic circuit. Each letter is a protein, but they’re also activators! Your goal is to spell out the five letter word you enter using the promoters given to you.
