@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/input6"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -23,10 +24,12 @@
         app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.619"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input8"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -42,10 +45,12 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.772"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input5"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -61,10 +66,12 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.619"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input7"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -80,10 +87,12 @@
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.772"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input4"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -99,10 +108,12 @@
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.619"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input3"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -118,7 +129,8 @@
         app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.469"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/outputText"
@@ -135,7 +147,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintVertical_bias="0.156"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/buttonReturn"
@@ -153,7 +166,8 @@
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988" />
+        app:layout_constraintVertical_bias="0.988"
+        android:gravity="center"/>
 
     <TextView
         android:padding="7dp"
@@ -173,7 +187,8 @@
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.265"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/target2"
@@ -193,7 +208,8 @@
         app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.265"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/target3"
@@ -212,7 +228,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.265"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/target4"
@@ -232,7 +249,8 @@
         app:layout_constraintHorizontal_bias="0.748"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.265"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/target5"
@@ -252,10 +270,12 @@
         app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.265"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input1"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -271,10 +291,12 @@
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.469"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/input2"
+        android:background="@drawable/textview_border"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -289,7 +311,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.469"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/evalButton"
@@ -307,6 +330,7 @@
         app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988" />
+        app:layout_constraintVertical_bias="0.988"
+        android:gravity="center"/>
 
 </android.support.constraint.ConstraintLayout>

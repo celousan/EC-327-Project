@@ -75,32 +75,69 @@ public class FillCircuit extends Activity {
         });
 
 
-        //button to evaluate answer
-
-        evaluateButton = findViewById(R.id.evalButton);
-        evaluateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //depending on the return of the check solution prompt different activities.
-                /*
-                if(evaluateAnswer()){
-
-                }
-                else{
-
-                }
-                */
-            }
-        });
-
-
         //get intent from main activity - done
         Intent inp = getIntent();
         String word = inp.getStringExtra("word");
 
         //pass input word to circuit class - done
 
-        Circuit wordInput = new Circuit(8, word);
+        final Circuit wordInput = new Circuit(8, word);
+
+        //button to evaluate answer - work in progress, watch out for final declaration, may need to invoke outside logic
+
+        evaluateButton = findViewById(R.id.evalButton);
+        evaluateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //depending on the return of the check solution method, direct to different alerts.
+
+                if(wordInput.checkSol(evaluateAnswer())){
+                    //alert message with congratulatory message, exit button and return button.
+                    //exit returns to mainActivity, return does nothing.
+
+                    AlertDialog.Builder exitAlert = new AlertDialog.Builder(FillCircuit.this);
+                    exitAlert.setTitle("Congratulations!");
+                    exitAlert.setMessage("You have solved the circuit!");
+                    exitAlert.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //return app to main activity
+                            openActivityMain();
+                        }
+                    });
+                    exitAlert.setNegativeButton("Return", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //no definition
+                        }
+                    });
+                    exitAlert.create().show();
+                }
+                else{
+                    //alert window with fail message, keep trying or display answer buttons
+                    //keep trying does nothing, display answer calls answer function
+
+                    AlertDialog.Builder exitAlert = new AlertDialog.Builder(FillCircuit.this);
+                    exitAlert.setTitle("Oh no!");
+                    exitAlert.setMessage("It looks like your circuit is not correct!");
+                    exitAlert.setPositiveButton("Continue Game", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //no definition
+                        }
+                    });
+                    exitAlert.setNegativeButton("Show Answer", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //display answer to circuit !!!!!
+                        }
+                    });
+                    exitAlert.create().show();
+                }
+
+            }
+        });
+
 
         //randomize the promoter table - done
 
@@ -125,9 +162,9 @@ public class FillCircuit extends Activity {
 
     }
 
-    /*
-    //function defined to evaluate answer
-    public boolean evaluateAnswer(){
+
+    //function defined to return a promoter array with user answers
+    public Promoter[] evaluateAnswer(){
         //saves promoters in variables
         int[] targetViewIds = new int[]{R.id.target2, R.id.target3, R.id.target4, R.id.target5};
         Promoter[] ansInputs = new Promoter[4];
@@ -143,8 +180,8 @@ public class FillCircuit extends Activity {
             }
 
         }
-        return Circuit.checkSol(ansInputs); //fix this shiit
-    }*/
+        return ansInputs;
+    }
 
     //function defined to send the app back to the mainActivity - done
     public void openActivityMain(){
@@ -189,7 +226,6 @@ public class FillCircuit extends Activity {
                         if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
                             draggedView = (View) event.getLocalState();
                             dropped = (TextView) draggedView;
-                            //set draggedView as invisible
                             return true;
                         }
                         else{
