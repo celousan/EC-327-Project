@@ -33,11 +33,6 @@ public class FillCircuit extends Activity {
         findViewById(R.id.input6).setOnTouchListener(new TouchListener());
         findViewById(R.id.input7).setOnTouchListener(new TouchListener());
         findViewById(R.id.input8).setOnTouchListener(new TouchListener());
-        //targets are also set as draggable so that user may change the position of used promoters
-        findViewById(R.id.target2).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target3).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target4).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target5).setOnTouchListener(new TouchListener());
 
         //drop listeners - done
 
@@ -76,6 +71,7 @@ public class FillCircuit extends Activity {
 
 
         //get intent from main activity - done
+
         Intent inp = getIntent();
         String word = inp.getStringExtra("word");
 
@@ -83,15 +79,14 @@ public class FillCircuit extends Activity {
 
         final Circuit wordInput = new Circuit(8, word);
 
-        //button to evaluate answer - work in progress, watch out for final declaration, may need to invoke outside logic
+        //button to evaluate answer - mostly done, still need to display answer
 
         evaluateButton = findViewById(R.id.evalButton);
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //depending on the return of the check solution method, direct to different alerts.
 
-                if(wordInput.checkSol(evaluateAnswer())){
+                if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
                     //exit returns to mainActivity, return does nothing.
 
@@ -126,7 +121,7 @@ public class FillCircuit extends Activity {
                             //no definition
                         }
                     });
-                    exitAlert.setNegativeButton("Show Answer", new DialogInterface.OnClickListener() {
+                    exitAlert.setNegativeButton("Display Answer", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             //display answer to circuit !!!!!
@@ -136,7 +131,7 @@ public class FillCircuit extends Activity {
                 }
 
             }
-        });
+        }); //on click listener end bracket
 
 
         //randomize the promoter table - done
@@ -163,8 +158,8 @@ public class FillCircuit extends Activity {
     }
 
 
-    //function defined to return a promoter array with user answers
-    public Promoter[] evaluateAnswer(){
+    //method defined to return a promoter array with user answers
+    public Promoter[] toPromoterArray(){
         //saves promoters in variables
         int[] targetViewIds = new int[]{R.id.target2, R.id.target3, R.id.target4, R.id.target5};
         Promoter[] ansInputs = new Promoter[4];
@@ -224,6 +219,7 @@ public class FillCircuit extends Activity {
                     case DragEvent.ACTION_DRAG_STARTED:
                         //checks if view can accept dragged data.
                         if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
+                            //defines the dragged textview
                             draggedView = (View) event.getLocalState();
                             dropped = (TextView) draggedView;
                             return true;
