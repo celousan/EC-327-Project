@@ -1,5 +1,6 @@
 package com.example.cellomini;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipDescription;
@@ -9,6 +10,8 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.DialogInterface;
@@ -24,7 +27,6 @@ public class FillCircuit extends Activity {
         setContentView(R.layout.fill_circuit);
 
         //drag listeners - done
-
         findViewById(R.id.input1).setOnTouchListener(new TouchListener());
         findViewById(R.id.input2).setOnTouchListener(new TouchListener());
         findViewById(R.id.input3).setOnTouchListener(new TouchListener());
@@ -33,6 +35,11 @@ public class FillCircuit extends Activity {
         findViewById(R.id.input6).setOnTouchListener(new TouchListener());
         findViewById(R.id.input7).setOnTouchListener(new TouchListener());
         findViewById(R.id.input8).setOnTouchListener(new TouchListener());
+
+        findViewById(R.id.target2).setOnTouchListener(new TouchListener());
+        findViewById(R.id.target3).setOnTouchListener(new TouchListener());
+        findViewById(R.id.target4).setOnTouchListener(new TouchListener());
+        findViewById(R.id.target5).setOnTouchListener(new TouchListener());
 
         //drop listeners - done
 
@@ -155,9 +162,12 @@ public class FillCircuit extends Activity {
         }
 
         //sets text view as variable - done
-        TextView textView = findViewById(R.id.outputText);
-        textView.setText(word);
-
+        int[] outputTextID = {R.id.outputText1, R.id.outputText2, R.id.outputText3, R.id.outputText4, R.id.outputText5};
+        for (int i = 0; i < 5; i++) {
+            TextView textView = findViewById(outputTextID[i]);
+            String letter = String.valueOf(word.charAt(i));
+            textView.setText(letter);
+        }
     }
 
 
@@ -224,6 +234,7 @@ public class FillCircuit extends Activity {
                         if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
                             //defines the dragged textview
                             draggedView = (View) event.getLocalState();
+                            draggedView.setVisibility(View.INVISIBLE);
                             dropped = (TextView) draggedView;
                             return true;
                         }
@@ -237,12 +248,28 @@ public class FillCircuit extends Activity {
                     case DragEvent.ACTION_DRAG_EXITED:
                         return true;
                     case DragEvent.ACTION_DROP:
+                        //Dragging to the circuit
                         //defines the receiving textView
                         TextView dropTarget = (TextView) view;
                         //sets the new text data
                         dropTarget.setText(dropped.getText().toString());
+                        draggedView = (View) event.getLocalState();
+                        Object tag = dropTarget.getTag();
+                        if (tag != null) {
+                            int existingID = (Integer) tag;
+                            findViewById(existingID).setVisibility(View.VISIBLE);
+                        }
+                        dropTarget.setTag(dropped.getId());
                         return true;
                     case DragEvent.ACTION_DRAG_ENDED:
+                        if (event.getResult()) {
+                            draggedView = (View) event.getLocalState();
+                            draggedView.setVisibility(View.INVISIBLE);
+                        }
+                        else {
+                            draggedView = (View) event.getLocalState();
+                            draggedView.setVisibility(View.VISIBLE);
+                        }
                         return true;
                     default:
                         Log.e("DragDrop Result","Unknown action type received by DragListener.");

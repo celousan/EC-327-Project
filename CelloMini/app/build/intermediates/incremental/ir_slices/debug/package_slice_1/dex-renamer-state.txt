@@ -1,0 +1,4 @@
+#Tue Apr 30 12:48:58 EDT 2019
+base.0=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.0=classes.dex
+renamed.0=classes.dex
