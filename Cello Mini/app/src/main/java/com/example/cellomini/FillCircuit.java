@@ -170,11 +170,11 @@ public class FillCircuit extends Activity {
         for(int i = 0; i < 4 ; i++){
             TextView currentTarget = findViewById(targetViewIds[i]);
             //pass the string answer from the input textview back as a promoter
-            if(currentTarget.toString().length() > 1){
-                ansInputs[i] = new Promoter(currentTarget.toString().charAt(0),currentTarget.toString().charAt(5));
+            if(currentTarget.getText().length() > 1){
+                ansInputs[i] = new Promoter(currentTarget.getText().charAt(0),currentTarget.getText().charAt(5));
             }
             else{
-                ansInputs[i] = new Promoter(currentTarget.toString().charAt(0));
+                ansInputs[i] = new Promoter(currentTarget.getText().charAt(0));
             }
 
         }
