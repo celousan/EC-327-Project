@@ -18,14 +18,59 @@ public class Circuit {
     }
     private void generateSolution()
     {
-        p[0] = new Promoter(str.charAt(1), str.charAt(2));
-        p[1] = new Promoter(str.charAt(3));
-        p[2] = new Promoter(str.charAt(3), str.charAt(4));
-        p[3] = new Promoter(str.charAt(2));
-        p[4] = new Promoter(str.charAt(0));
-        p[5] = new Promoter(str.charAt(2), str.charAt(3));
-        p[6] = new Promoter(str.charAt(4), str.charAt(1));
-        p[7] = new Promoter(str.charAt(0), str.charAt(4));
+        char[] chars = str.toCharArray();
+        char a = ' ', b = ' ', c = ' ', d = ' ', e = ' ';
+        for(int i = 0; i < chars.length; i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    a = chars[i];
+                    break;
+                case 1:
+                    b = chars[i];
+                    break;
+                case 2:
+                    c = chars[i];
+                    break;
+                case 3:
+                    d = chars[i];
+                    break;
+                case 4:
+                    e = chars[i];
+                    break;
+            }
+        }
+        for(int i = 0; i < p.length; i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    p[i] = new Promoter(b,c);
+                    break;
+                case 1:
+                    p[i] = new Promoter(d);
+                    break;
+                case 2:
+                    p[i] = new Promoter(d,e);
+                    break;
+                case 3:
+                    p[i] = new Promoter(c);
+                    break;
+                case 4:
+                    p[i] = new Promoter(a);
+                    break;
+                case 5:
+                    p[i] = new Promoter(c,d);
+                    break;
+                case 6:
+                    p[i] = new Promoter(e,a);
+                    break;
+                case 7:
+                    p[i] = new Promoter(a,e);
+                    break;
+            }
+        }
     }
     public boolean checkSol(Promoter[] sol)
     {
@@ -41,7 +86,15 @@ public class Circuit {
 
         return (counter == 5);
     }
-    public Promoter[] getSol(){return p;}
+    public Promoter[] getSol()
+    {
+        Promoter[] pos_sol = new Promoter[4];
+        pos_sol[0] = p[4];
+        pos_sol[1] = p[0];
+        pos_sol[2] = p[3];
+        pos_sol[3] = p[1];
+        return pos_sol;
+    }
     public Promoter[] getPromoters()
     {
         Random rgen = new Random();
