@@ -2,8 +2,10 @@ package com.example.cellomini;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -131,9 +133,11 @@ public class FillCircuit extends Activity {
                     exitAlert.setNegativeButton("Display Answer", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //get answer to circuit !!!!!
+                            //get answer to circuit
                             Promoter[] solution = wordInput.getSol();
                             //display answer to circuit
+                            showAnswerDialog(FillCircuit.this, promoterToString(solution));
+
                         }
                     });
                     exitAlert.create().show();
@@ -169,6 +173,42 @@ public class FillCircuit extends Activity {
         }
     }
 
+
+    //method defined to display a dialogue with answer
+    private void showAnswerDialog(Context c, String answer) {
+        final TextView answerText = new TextView(c);
+        AlertDialog dialog = new AlertDialog.Builder(c)
+                .setTitle("A possible answer is:")
+                .setMessage(answer)
+                .setView(answerText)
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //returns app to main activity
+                        openActivityMain();
+                    }
+                })
+                .create();
+        dialog.show();
+    }
+
+    //method defined to change a promoter array into a string
+    public String promoterToString(Promoter[] input){
+
+        String output = "";
+
+        for(int i = 0; i<4 ;i++){
+
+            if(input[i].getLogic()) {
+                output = output + " " + input[i].getLet1() + " or " + input[i].getLet2() + ", ";
+
+            }
+            else {
+                output = output + " " + input[i].getLet1() + ", ";
+            }
+        }
+        return output;
+    }
 
     //method defined to return a promoter array with user answers - done
     public Promoter[] toPromoterArray(){
