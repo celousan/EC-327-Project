@@ -2,6 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/fredoka_one</item>
+        <item>@font/nunito</item>
+        <item>@font/nunito_semibold_italic</item>
         <item>@font/roboto</item>
         <item>@font/roboto_bold</item>
         <item>@font/titillium_web</item>
