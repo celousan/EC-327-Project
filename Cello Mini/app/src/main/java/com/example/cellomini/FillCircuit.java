@@ -296,6 +296,7 @@ public class FillCircuit extends Activity {
                         if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
                             Object tag_existing = draggedView.getTag();
                             dropTarget.setTag(tag_existing);
+                            draggedView.setTag(null);
                             dropped.setText("");
                             findViewById(draggedView.getId()).setOnClickListener(null);
                             draggedView.setVisibility(View.VISIBLE);
@@ -317,7 +318,7 @@ public class FillCircuit extends Activity {
                         }
                         else {
                             draggedView = (View) event.getLocalState();
-                            if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
+                            /*if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
                                 dropped.setText("");
                                 findViewById(draggedView.getId()).setOnClickListener(null);
                                 Object tag_old = draggedView.getTag();
@@ -325,9 +326,9 @@ public class FillCircuit extends Activity {
                                 draggedView.setVisibility(View.VISIBLE);
                                 findViewById(existingID).setVisibility(View.VISIBLE);
                             }
-                            else {
+                            else {*/
                                 draggedView.setVisibility(View.VISIBLE);
-                            }
+                            //}
                         }
                         return true;
                     default:
