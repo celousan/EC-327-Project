@@ -85,8 +85,6 @@ public class FillCircuit extends Activity {
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //debugging option for solution
-                //Log.d("LOGIC", Boolean.toString(wordInput.checkSol(toPromoterArray())));
 
                 if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
