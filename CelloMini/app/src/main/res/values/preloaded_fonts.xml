@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/fredoka_one</item>
+        <item>@font/roboto</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/titillium_web</item>
+        <item>@font/work_sans_extrabold</item>
+        <item>@font/work_sans_thin</item>
+    </array>
+</resources>
