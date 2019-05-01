@@ -20,7 +20,7 @@ public class Circuit {
     {
         if(p.length == 8)
         {
-            
+
             p[0] = new Promoter(str.charAt(1), str.charAt(2));
             p[1] = new Promoter(str.charAt(3));
             p[2] = new Promoter(str.charAt(3), str.charAt(4));
@@ -29,7 +29,7 @@ public class Circuit {
             p[5] = new Promoter(str.charAt(2), str.charAt(3));
             p[6] = new Promoter(str.charAt(4), str.charAt(1));
             p[7] = new Promoter(str.charAt(0), str.charAt(4));
-
+            
         }
     }
     public boolean checkSol(Promoter[] sol)

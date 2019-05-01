@@ -140,16 +140,16 @@ public class FillCircuit extends Activity {
 
         String temporaryText;
         int[] inputViewIds = new int[]{R.id.input1, R.id.input2, R.id.input3, R.id.input4, R.id.input5, R.id.input6, R.id.input7, R.id.input8};
-        Promoter[] p = wordInput.getPromoters();
-        for(int i = 0; i < p.length; i++)
+        Promoter[] promo = wordInput.getPromoters();
+        for(int i = 0; i < promo.length; i++)
         {
             TextView currentInput = findViewById(inputViewIds[i]);
-            if(p[i].getLogic()) {
-                temporaryText = p[i].getLet1() + " or " + p[i].getLet2();
+            if(promo[i].getLogic()) {
+                temporaryText = promo[i].getLet1() + " or " + promo[i].getLet2();
                 currentInput.setText(temporaryText);
             }
             else {
-                currentInput.setText(p[i].getLet1());
+                currentInput.setText(promo[i].getLet1());
             }
         }
 
