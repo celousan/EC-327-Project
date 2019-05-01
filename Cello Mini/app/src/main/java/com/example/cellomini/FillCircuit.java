@@ -92,8 +92,6 @@ public class FillCircuit extends Activity {
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //debugging option for solution
-                //Log.d("LOGIC", Boolean.toString(wordInput.checkSol(toPromoterArray())));
 
                 if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
@@ -133,8 +131,9 @@ public class FillCircuit extends Activity {
                     exitAlert.setNegativeButton("Display Answer", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //display answer to circuit !!!!!
-                            //wordInput.getSol();
+                            //get answer to circuit !!!!!
+                            Promoter[] solution = wordInput.getSol();
+                            //display answer to circuit
                         }
                     });
                     exitAlert.create().show();
@@ -148,16 +147,16 @@ public class FillCircuit extends Activity {
 
         String temporaryText;
         int[] inputViewIds = new int[]{R.id.input1, R.id.input2, R.id.input3, R.id.input4, R.id.input5, R.id.input6, R.id.input7, R.id.input8};
-        Promoter[] p = wordInput.getPromoters();
-        for(int i = 0; i < p.length; i++)
+        Promoter[] promo = wordInput.getPromoters();
+        for(int i = 0; i < promo.length; i++)
         {
             TextView currentInput = findViewById(inputViewIds[i]);
-            if(p[i].getLogic()) {
-                temporaryText = p[i].getLet1() + " or " + p[i].getLet2();
+            if(promo[i].getLogic()) {
+                temporaryText = promo[i].getLet1() + " or " + promo[i].getLet2();
                 currentInput.setText(temporaryText);
             }
             else {
-                currentInput.setText(p[i].getLet1());
+                currentInput.setText(promo[i].getLet1());
             }
         }
 
@@ -180,11 +179,11 @@ public class FillCircuit extends Activity {
         for(int i = 0; i < 4 ; i++){
             TextView currentTarget = findViewById(targetViewIds[i]);
             //pass the string answer from the input textview back as a promoter
-            if(currentTarget.toString().length() > 1){
-                ansInputs[i] = new Promoter(currentTarget.toString().charAt(0),currentTarget.toString().charAt(5));
+            if(currentTarget.getText().length() > 1){
+                ansInputs[i] = new Promoter(currentTarget.getText().charAt(0),currentTarget.getText().charAt(5));
             }
             else{
-                ansInputs[i] = new Promoter(currentTarget.toString().charAt(0));
+                ansInputs[i] = new Promoter(currentTarget.getText().charAt(0));
             }
 
         }
