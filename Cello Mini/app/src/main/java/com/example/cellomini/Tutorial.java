@@ -40,15 +40,16 @@ public class Tutorial extends Activity implements View.OnClickListener {
     {
         //The switch statements grab the id values of the button pressed and calculates the tip accordingly
         switch(v.getId()) {
-
             case R.id.button_continue: {
                 //go to information page
                 Intent enterWordActivity = new Intent(Tutorial.this, EnterWord.class);
                 startActivity(enterWordActivity);
+                break;
             }
             case R.id.buttonReturn: {
                 Intent mainActivity = new Intent(Tutorial.this, MainActivity.class);
                 startActivity(mainActivity);
+                break;
             }
             default: {
                 break;
