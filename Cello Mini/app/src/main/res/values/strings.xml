@@ -4,9 +4,14 @@
     <string name="button_get_started">Get Started</string>
     <string name="button_about_us">About</string>
     <string name="button_continue">Continue</string>
-    <string name="tutorial_description">You’re a synthetic biologist trying to spell out a word using a
-genetic circuit. Each letter is a protein, but they’re also activators! Your goal is to spell out the five letter word you enter using the promoters given to you.
-For each letter, choose a promoter activated by the letter that came before it. But be careful, don’t let a protein be expressed early, or your circuit will misspell the word!</string>
+    <string name="tutorial_hello"> Hello, future synthetic biologist!</string>
+    <string name="tutorial_task">Your task:</string>
+    <string name="tutorial_task_description">Spell a word using a genetic circuit.\n
+        Each letter is a protein, but they\'re also activators! You\'re given promoters to express each letter.\n
+        These promoters are special! They only work when previous letters have already been expressed.\n</string>
+    <string name="tutorial_warning">Watch out!</string>
+    <string name="tutorial_warning_description">You don\'t want your promoter to work too early and misspell your word.</string>
+    <string name="tutorial_good_luck">Good luck!</string>
     <string name="enter_word">Enter a five letter word</string>
     <string name="gen_circuit">Generate Circuit</string>
     <string name="button_back">Back to Home Page</string>

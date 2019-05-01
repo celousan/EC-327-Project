@@ -10,6 +10,7 @@ public class Tutorial extends Activity implements View.OnClickListener {
 
     //Creating button objects, which extend (inherit) the View class
     private Button tbutton1;
+    private Button tbutton2;
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,12 +22,14 @@ public class Tutorial extends Activity implements View.OnClickListener {
 
         //The buttons have parameters corresponding to the IDs in Main.xml
         tbutton1 = (Button) findViewById(R.id.button_continue);
+        tbutton2 = (Button) findViewById(R.id.buttonReturn);
 
         /*The buttons now have onClickListeners set, a method/function of the button class
          * to start a new activity/intent when pressed. In this case, pressing a button
          * will go to the results page.
          * */
         tbutton1.setOnClickListener(this);
+        tbutton2.setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +45,10 @@ public class Tutorial extends Activity implements View.OnClickListener {
                 //go to information page
                 Intent enterWordActivity = new Intent(Tutorial.this, EnterWord.class);
                 startActivity(enterWordActivity);
+            }
+            case R.id.buttonReturn: {
+                Intent mainActivity = new Intent(Tutorial.this, MainActivity.class);
+                startActivity(mainActivity);
             }
             default: {
                 break;
