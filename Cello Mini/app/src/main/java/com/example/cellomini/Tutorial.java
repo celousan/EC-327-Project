@@ -26,7 +26,7 @@ public class Tutorial extends Activity implements View.OnClickListener {
 
         /*The buttons now have onClickListeners set, a method/function of the button class
          * to start a new activity/intent when pressed. In this case, pressing a button
-         * will go to the results page.
+         * will go to the fill circuit page.
          * */
         tbutton1.setOnClickListener(this);
         tbutton2.setOnClickListener(this);
@@ -41,12 +41,13 @@ public class Tutorial extends Activity implements View.OnClickListener {
         //The switch statements grab the id values of the button pressed
         switch(v.getId()) {
             case R.id.button_continue: {
-                //go to information page
+                //go to word input
                 Intent enterWordActivity = new Intent(Tutorial.this, EnterWord.class);
                 startActivity(enterWordActivity);
                 break;
             }
             case R.id.buttonReturn: {
+                //goes back to main activity page
                 Intent mainActivity = new Intent(Tutorial.this, MainActivity.class);
                 startActivity(mainActivity);
                 break;

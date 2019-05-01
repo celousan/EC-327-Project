@@ -1,8 +1,6 @@
 package com.example.cellomini;
 
-import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Context;
@@ -12,8 +10,6 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.DialogInterface;
@@ -72,6 +68,7 @@ public class FillCircuit extends Activity {
             }
         });
 
+        //button to clear inputted promoters and re-shuffle
         clearButton = findViewById(R.id.clearButton);
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,18 +87,21 @@ public class FillCircuit extends Activity {
 
         final Circuit wordInput = new Circuit(8, word);
 
-        //button to evaluate answer - mostly done, still need to display answer
+        //button to evaluate answer
 
         evaluateButton = findViewById(R.id.evalButton);
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //checks if the circuit is completed, if not does not accept evaluation command
                 Promoter[] ansInputs = toPromoterArray();
                 boolean full = true;
                 for (int i = 0; i < 4; i++) {
                     if (ansInputs[i] == null)
                         full = false;
                 }
+                //dialogue to warn user of incomplete circuit
                 if (!full) {
                     AlertDialog.Builder exitAlert = new AlertDialog.Builder(FillCircuit.this);
                     exitAlert.setTitle("Oh no!");
@@ -166,7 +166,7 @@ public class FillCircuit extends Activity {
         }); //on click listener end bracket
 
 
-        //randomize the promoter table - done - this is probably what's messing with the promoter
+        //randomize the promoter table - done
 
         String temporaryText;
         int[] inputViewIds = new int[]{R.id.input1, R.id.input2, R.id.input3, R.id.input4, R.id.input5, R.id.input6, R.id.input7, R.id.input8};

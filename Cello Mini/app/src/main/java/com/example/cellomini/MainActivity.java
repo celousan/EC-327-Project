@@ -1,30 +1,18 @@
-
-/*****************************************************************************************
- * Adapted and tortured by Julian Trinh and Connor Richmond for use in ENG EC 327
- * Source code from https://github.com/academicode/app-simple-tip-calculator/tree/session-7
- * Sweet tutorial at https://www.youtube.com/watch?v=Z3jzIYkxB1s (where the source is from)
- * Boston University: College of Engineering
- *****************************************************************************************/
 package com.example.cellomini;
 
 //This is the class that will first be run when the app is first opened
 
-//import is #include from C++
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-//Extends = inherits, implements means it interfaces with another class
 public class MainActivity extends Activity {
 
     //Creating button objects, which extend (inherit) the View class
@@ -58,10 +46,7 @@ public class MainActivity extends Activity {
         rotate.setRepeatCount(Animation.INFINITE);
         spin_logo.setAnimation(rotate);
 
-        /*The buttons now have onClickListeners set, a method/function of the button class
-         * to start a new activity/intent when pressed. In this case, pressing a button
-         * will go to the results page.
-         * */
+        //on click, button redirects user to tutorial page
         mbutton1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +54,7 @@ public class MainActivity extends Activity {
                 startActivity(tutorialActivity);
             }
         });
+        //on click, second button displays information about the app
         mbutton2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
