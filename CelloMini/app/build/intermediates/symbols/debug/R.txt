@@ -648,8 +648,9 @@ int drawable notification_tile_bg 0x7f070062
 int drawable notify_panel_notification_icon_bg 0x7f070063
 int drawable round_button 0x7f070064
 int drawable round_button2 0x7f070065
-int drawable tooltip_frame_dark 0x7f070066
-int drawable tooltip_frame_light 0x7f070067
+int drawable textview_border 0x7f070066
+int drawable tooltip_frame_dark 0x7f070067
+int drawable tooltip_frame_light 0x7f070068
 int font fredoka_one 0x7f080000
 int font roboto 0x7f080001
 int font roboto_bold 0x7f080002

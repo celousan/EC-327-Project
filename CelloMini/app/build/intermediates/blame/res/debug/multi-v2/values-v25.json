@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\melquick\\.gradle\\caches\\transforms-2\\files-2.1\\02e364f394cf1a8c90e074151f6aa3df\\res\\values-v25\\values-v25.xml",
+                    "source": "/Users/cadupadilha/.gradle/caches/transforms-2/files-2.1/2c9728df84989c0d6a5789aa81d18089/res/values-v25/values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

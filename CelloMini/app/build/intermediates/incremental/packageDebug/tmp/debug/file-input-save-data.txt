@@ -1,18 +1,18 @@
 #Internal package file, do not edit.
-#Mon Apr 29 14:42:41 EDT 2019
+#Tue Apr 30 22:46:15 EDT 2019
 4.path=classes.dex
 8.set=DEX
 6.path=classes.dex
 0.baseType=DIRECTORY
 10.path=classes.dex
 5.baseType=DIRECTORY
-1.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\18
+1.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/12
 8.path=classes.dex
-3.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\16
+3.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/21
 4.set=DEX
-5.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
-7.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
-9.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+5.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/16
+7.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/14
+9.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/11
 1.baseType=DIRECTORY
 0.set=DEX
 6.baseType=DIRECTORY
@@ -25,16 +25,16 @@
 3.path=classes.dex
 10.set=DEX
 5.path=classes.dex
-0.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+0.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/15
 7.path=classes.dex
 9.path=classes.dex
 6.set=DEX
-2.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
-4.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+2.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/13
+4.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/19
 3.baseType=DIRECTORY
-6.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\20
-10.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17
-8.base=C\:\\Users\\melquick\\Documents\\GitHub\\EC-327-Color-by-Gene\\CelloMini\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\21
+6.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/17
+10.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/20
+8.base=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/18
 2.set=DEX
 8.baseType=DIRECTORY
 9.set=DEX
