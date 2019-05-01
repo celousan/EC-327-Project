@@ -2,9 +2,11 @@
 
 ## Appication Name: Synbio Logic
 
-## Purpose: Provide an educational platform to learn about gene expression and the logic behind genetic circuits.
+## Purpose: 
+Provide an educational platform to learn about gene expression and the logic behind genetic circuits.
 
-## General Description: The goal of the game is to spell a word using inducible promoters. Each promoter is induced by one or more letters before it in the word. However, some promoters have additional logic (AND/OR) that causes complications. The word can be mispelled by activating a promoter too soon.
+## General Description: 
+The goal of the game is to spell a word using inducible promoters. Each promoter is induced by one or more letters before it in the word. However, some promoters have additional logic (AND/OR) that causes complications. The word can be mispelled by activating a promoter too soon.
 
 ## Game Rules:
 - The word must be five letters.
