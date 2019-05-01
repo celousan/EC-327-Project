@@ -43,11 +43,6 @@ public class FillCircuit extends Activity {
         findViewById(R.id.target4).setOnDragListener(new MyDragListener());
         findViewById(R.id.target5).setOnDragListener(new MyDragListener());
 
-        View defaultView2 = findViewById(R.id.target2);
-        View defaultView3 = findViewById(R.id.target3);
-        View defaultView4 = findViewById(R.id.target4);
-        View defaultView5 = findViewById(R.id.target5);
-
         //button to return to main activity, with alert window - done
 
         returnButton = findViewById(R.id.buttonReturn);
@@ -258,7 +253,16 @@ public class FillCircuit extends Activity {
                             int existingID = (Integer) tag;
                             findViewById(existingID).setVisibility(View.VISIBLE);
                         }
-                        dropTarget.setTag(dropped.getId());
+                        if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
+                            Object tag_existing = draggedView.getTag();
+                            dropTarget.setTag(tag_existing);
+                            dropped.setText("");
+                            findViewById(draggedView.getId()).setOnClickListener(null);
+                            draggedView.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            dropTarget.setTag(dropped.getId());
+                        }
                         findViewById(dropTarget.getId()).setOnTouchListener(new TouchListener());
                         return true;
                     case DragEvent.ACTION_DRAG_ENDED:
@@ -266,16 +270,24 @@ public class FillCircuit extends Activity {
                             draggedView = (View) event.getLocalState();
                             if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
                                 draggedView.setVisibility(View.VISIBLE);
-                                dropped.setText("");
-                                findViewById(draggedView.getId()).setOnClickListener(null);
                             }
                             else {
-                                draggedView.setVisibility(View.INVISIBLE);
+                              draggedView.setVisibility(View.INVISIBLE);
                             }
                         }
                         else {
                             draggedView = (View) event.getLocalState();
-                            draggedView.setVisibility(View.VISIBLE);
+                            if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
+                                dropped.setText("");
+                                findViewById(draggedView.getId()).setOnClickListener(null);
+                                Object tag_old = draggedView.getTag();
+                                int existingID = (Integer) tag_old;
+                                draggedView.setVisibility(View.VISIBLE);
+                                findViewById(existingID).setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                draggedView.setVisibility(View.VISIBLE);
+                            }
                         }
                         return true;
                     default:
