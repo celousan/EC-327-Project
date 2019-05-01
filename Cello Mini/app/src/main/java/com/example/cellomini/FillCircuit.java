@@ -36,11 +36,6 @@ public class FillCircuit extends Activity {
         findViewById(R.id.input7).setOnTouchListener(new TouchListener());
         findViewById(R.id.input8).setOnTouchListener(new TouchListener());
 
-        findViewById(R.id.target2).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target3).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target4).setOnTouchListener(new TouchListener());
-        findViewById(R.id.target5).setOnTouchListener(new TouchListener());
-
         //drop listeners - done
 
         findViewById(R.id.target2).setOnDragListener(new MyDragListener());
@@ -48,6 +43,10 @@ public class FillCircuit extends Activity {
         findViewById(R.id.target4).setOnDragListener(new MyDragListener());
         findViewById(R.id.target5).setOnDragListener(new MyDragListener());
 
+        View defaultView2 = findViewById(R.id.target2);
+        View defaultView3 = findViewById(R.id.target3);
+        View defaultView4 = findViewById(R.id.target4);
+        View defaultView5 = findViewById(R.id.target5);
 
         //button to return to main activity, with alert window - done
 
@@ -225,8 +224,10 @@ public class FillCircuit extends Activity {
             View draggedView;
             TextView dropped;
 
+
             //call this method once drag event is sent to the listener
             public boolean onDrag(View view, DragEvent event) {
+                TextView dropTarget = (TextView) view;
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_STARTED:
                         //checks if view can accept dragged data.
@@ -249,7 +250,6 @@ public class FillCircuit extends Activity {
                     case DragEvent.ACTION_DROP:
                         //Dragging to the circuit
                         //defines the receiving textView
-                        TextView dropTarget = (TextView) view;
                         //sets the new text data
                         dropTarget.setText(dropped.getText().toString());
                         draggedView = (View) event.getLocalState();
@@ -259,11 +259,19 @@ public class FillCircuit extends Activity {
                             findViewById(existingID).setVisibility(View.VISIBLE);
                         }
                         dropTarget.setTag(dropped.getId());
+                        findViewById(dropTarget.getId()).setOnTouchListener(new TouchListener());
                         return true;
                     case DragEvent.ACTION_DRAG_ENDED:
                         if (event.getResult()) {
                             draggedView = (View) event.getLocalState();
-                            draggedView.setVisibility(View.INVISIBLE);
+                            if (draggedView.getId() == R.id.target2 || draggedView.getId() == R.id.target3 || draggedView.getId() == R.id.target4 || draggedView.getId() == R.id.target5) {
+                                draggedView.setVisibility(View.VISIBLE);
+                                dropped.setText("");
+                                findViewById(draggedView.getId()).setOnClickListener(null);
+                            }
+                            else {
+                                draggedView.setVisibility(View.INVISIBLE);
+                            }
                         }
                         else {
                             draggedView = (View) event.getLocalState();

@@ -40,7 +40,6 @@ public class Tutorial extends Activity implements View.OnClickListener {
     {
         //The switch statements grab the id values of the button pressed
         switch(v.getId()) {
-
             case R.id.button_continue: {
                 //go to information page
                 Intent enterWordActivity = new Intent(Tutorial.this, EnterWord.class);

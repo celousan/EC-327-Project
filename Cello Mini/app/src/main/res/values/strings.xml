@@ -15,6 +15,8 @@
     <string name="enter_word">Enter a five letter word</string>
     <string name="gen_circuit">Generate Circuit</string>
     <string name="button_back">Back to Home Page</string>
-    <string name="txt_about">About Us</string>
+    <string name="txt_stem">Discovering your pathway through engineering biology.</string>
+    <string name="txt_stem_d">Synbio Logic is designed as an educational introduction to genetic circuits through a logic puzzle.</string>
+    <string name="txt_about">Created by:\nMuayad, Carlos, Melanie, and Ryan (2019)</string>
     <string name="exit">Exit</string>
 </resources>
