@@ -124,8 +124,9 @@ public class FillCircuit extends Activity {
                     exitAlert.setNegativeButton("Display Answer", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //display answer to circuit !!!!!
-                            //wordInput.getSol();
+                            //get answer to circuit !!!!!
+                            Promoter[] solution = wordInput.getSol();
+                            //display answer to circuit
                         }
                     });
                     exitAlert.create().show();
