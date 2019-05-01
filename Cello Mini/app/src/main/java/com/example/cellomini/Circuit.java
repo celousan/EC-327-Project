@@ -18,19 +18,14 @@ public class Circuit {
     }
     private void generateSolution()
     {
-        if(p.length == 8)
-        {
-
-            p[0] = new Promoter(str.charAt(1), str.charAt(2));
-            p[1] = new Promoter(str.charAt(3));
-            p[2] = new Promoter(str.charAt(3), str.charAt(4));
-            p[3] = new Promoter(str.charAt(2));
-            p[4] = new Promoter(str.charAt(0));
-            p[5] = new Promoter(str.charAt(2), str.charAt(3));
-            p[6] = new Promoter(str.charAt(4), str.charAt(1));
-            p[7] = new Promoter(str.charAt(0), str.charAt(4));
-
-        }
+        p[0] = new Promoter(str.charAt(1), str.charAt(2));
+        p[1] = new Promoter(str.charAt(3));
+        p[2] = new Promoter(str.charAt(3), str.charAt(4));
+        p[3] = new Promoter(str.charAt(2));
+        p[4] = new Promoter(str.charAt(0));
+        p[5] = new Promoter(str.charAt(2), str.charAt(3));
+        p[6] = new Promoter(str.charAt(4), str.charAt(1));
+        p[7] = new Promoter(str.charAt(0), str.charAt(4));
     }
     public boolean checkSol(Promoter[] sol)
     {
@@ -50,7 +45,11 @@ public class Circuit {
     public Promoter[] getPromoters()
     {
         Random rgen = new Random();
-        Promoter[] r = p;
+        Promoter[] r = new Promoter[p.length];
+        for(int i = 0; i < p.length; i++)
+        {
+            r[i] = p[i];
+        }
         for(int i = 0; i < r.length; i++)
         {
             int randPos = rgen.nextInt(r.length);

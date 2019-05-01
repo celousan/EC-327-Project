@@ -143,7 +143,7 @@ public class FillCircuit extends Activity {
         }); //on click listener end bracket
 
 
-        //randomize the promoter table - done
+        //randomize the promoter table - done - this is probably what's messing with the promoter
 
         String temporaryText;
         int[] inputViewIds = new int[]{R.id.input1, R.id.input2, R.id.input3, R.id.input4, R.id.input5, R.id.input6, R.id.input7, R.id.input8};
@@ -170,7 +170,7 @@ public class FillCircuit extends Activity {
     }
 
 
-    //method defined to return a promoter array with user answers
+    //method defined to return a promoter array with user answers - done
     public Promoter[] toPromoterArray(){
         //saves promoters in variables
         int[] targetViewIds = new int[]{R.id.target2, R.id.target3, R.id.target4, R.id.target5};
