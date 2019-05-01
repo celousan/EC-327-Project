@@ -16,6 +16,7 @@ public class Circuit {
         this.str = str;
         generateSolution();
     }
+    //generates solutions to the circuit
     private void generateSolution()
     {
         char[] chars = str.toCharArray();
@@ -72,6 +73,7 @@ public class Circuit {
             }
         }
     }
+    //compares the user inputted array to acceptable solutions
     public boolean checkSol(Promoter[] sol)
     {
         int counter = 1;
@@ -86,6 +88,7 @@ public class Circuit {
 
         return (counter == 5);
     }
+    //returns one of the possible solutions to the circuit
     public Promoter[] getSol()
     {
         Promoter[] pos_sol = new Promoter[4];
@@ -95,6 +98,7 @@ public class Circuit {
         pos_sol[3] = p[1];
         return pos_sol;
     }
+    //returns the generated promoters
     public Promoter[] getPromoters()
     {
         Random rgen = new Random();
