@@ -21,7 +21,7 @@ import android.support.v7.app.AlertDialog;
 
 public class FillCircuit extends Activity {
 
-    Button returnButton, evaluateButton;
+    Button returnButton, evaluateButton, clearButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,14 @@ public class FillCircuit extends Activity {
             }
         });
 
+        clearButton = findViewById(R.id.clearButton);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCreate(null);
+            }
+        });
+
 
         //get intent from main activity - done
 
@@ -88,8 +96,25 @@ public class FillCircuit extends Activity {
         evaluateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(wordInput.checkSol(toPromoterArray())){
+                Promoter[] ansInputs = toPromoterArray();
+                boolean full = true;
+                for (int i = 0; i < 4; i++) {
+                    if (ansInputs[i] == null)
+                        full = false;
+                }
+                if (!full) {
+                    AlertDialog.Builder exitAlert = new AlertDialog.Builder(FillCircuit.this);
+                    exitAlert.setTitle("Oh no!");
+                    exitAlert.setMessage("It looks like your circuit is not full!");
+                    exitAlert.setPositiveButton("Continue Game", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //no definition
+                        }
+                    });
+                    exitAlert.create().show();
+                }
+                else if(wordInput.checkSol(toPromoterArray())){
                     //alert message with congratulatory message, exit button and return button.
                     //exit returns to mainActivity, return does nothing.
 
@@ -194,11 +219,14 @@ public class FillCircuit extends Activity {
         for(int i = 0; i<4 ;i++){
 
             if(input[i].getLogic()) {
-                output = output + " " + input[i].getLet1() + " or " + input[i].getLet2() + ", ";
+                output = output + " " + input[i].getLet1() + " or " + input[i].getLet2();
 
             }
             else {
-                output = output + " " + input[i].getLet1() + ", ";
+                output = output + " " + input[i].getLet1();
+            }
+            if (i != 3) {
+                output += ", ";
             }
         }
         return output;
@@ -213,7 +241,10 @@ public class FillCircuit extends Activity {
         for(int i = 0; i < 4 ; i++){
             TextView currentTarget = findViewById(targetViewIds[i]);
             //pass the string answer from the input textview back as a promoter
-            if(currentTarget.getText().length() > 1){
+            if (currentTarget.getText().length() == 0) {
+                ansInputs[i] = null;
+            }
+            else if(currentTarget.getText().length() > 1){
                 ansInputs[i] = new Promoter(currentTarget.getText().charAt(0),currentTarget.getText().charAt(5));
             }
             else{

@@ -91,7 +91,7 @@
 
     <TextView
         android:id="@+id/task_descrip"
-        android:layout_width="408dp"
+        android:layout_width="340dp"
         android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -133,15 +133,20 @@
 
     <TextView
         android:id="@+id/warning_descrip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="346dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:gravity="center"
         android:text="@string/tutorial_warning_description"
         android:textSize="18sp"
         app:fontFamily="@font/titillium_web"
-        app:layout_constraintTop_toBottomOf="@+id/warning"
-        tools:layout_editor_absoluteX="-1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warning" />
 
 
     <TextView
@@ -169,8 +174,8 @@
 
     <Button
         android:id="@+id/button_continue"
-        android:layout_width="188dp"
-        android:layout_height="57dp"
+        android:layout_width="158dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -185,17 +190,17 @@
         app:fontFamily="@font/roboto_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.954" />
 
     <Button
         android:id="@+id/buttonReturn"
-        android:layout_width="188dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="158dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
@@ -211,6 +216,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.953" />
 
 </android.support.constraint.ConstraintLayout>

@@ -41,7 +41,14 @@ public class Circuit {
 
         return (counter == 5);
     }
-    public Promoter[] getSol(){return p;}
+    public Promoter[] getSol(){
+        Promoter[] pos_sol = new Promoter[4];
+        pos_sol[0] = p[4];
+        pos_sol[1] = p[0];
+        pos_sol[2] = p[3];
+        pos_sol[3] = p[1];
+        return pos_sol;
+    }
     public Promoter[] getPromoters()
     {
         Random rgen = new Random();

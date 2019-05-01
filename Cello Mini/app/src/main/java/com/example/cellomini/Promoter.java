@@ -39,12 +39,19 @@ public class Promoter {
     //compares the letters stored in two promoters and if they share a letter compare returns true
     public boolean compare(Promoter p)
     {
-        if((this.getLet1().equals(p.getLet1()))||(this.getLet2().equals(p.getLet2()))||(this.getLet1().equals(p.getLet2()))||(this.getLet2().equals(p.getLet1())))
+        if(this.getLogic())
         {
-            return true;
+            if(this.getLet1().equals(p.getLet1()) && this.getLet2().equals(p.getLet2()) )
+                return true;
+            else
+                return false;
         }
-        else{
-            return false;
+        else
+        {
+            if(this.getLet1().equals(p.getLet1()))
+                return true;
+            else
+                return false;
         }
     }
 }
