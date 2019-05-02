@@ -1,4 +1,0 @@
-#Tue Apr 30 22:46:15 EDT 2019
-base.0=/Users/cadupadilha/Documents/GitHub/EC-327-Color-by-Gene/CelloMini/app/build/intermediates/transforms/dexMerger/debug/5
-path.0=classes.dex
-renamed.0=classes.dex
