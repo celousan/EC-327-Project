@@ -18,6 +18,7 @@ public class Circuit {
         this.str = str;
         generateSolution();
     }
+
     //function defined to generate the possible solutions to the circuit
     private void generateSolution()
     {
@@ -75,6 +76,7 @@ public class Circuit {
             }
         }
     }
+
     //method defined to compare user circuit with acceptable answers
     public boolean checkSol(Promoter[] sol)
     {
@@ -90,8 +92,11 @@ public class Circuit {
 
         return (counter == 5);
     }
-    //method defined to get one acceptable solution so it can be displayed to the user
-    public Promoter[] getSol(){
+
+//method defined to get one acceptable solution so it can be displayed to the user
+    public Promoter[] getSol()
+    {
+
         Promoter[] pos_sol = new Promoter[4];
         pos_sol[0] = p[4];
         pos_sol[1] = p[0];
@@ -99,7 +104,8 @@ public class Circuit {
         pos_sol[3] = p[1];
         return pos_sol;
     }
-    //method defined to randomize the order of the promoters so it can be passed to the fill circuit activity
+
+//method defined to randomize the order of the promoters so it can be passed to the fill circuit activity
     public Promoter[] getPromoters()
     {
         Random rgen = new Random();

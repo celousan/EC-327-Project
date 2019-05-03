@@ -41,7 +41,7 @@ public class Promoter {
     {
         if(this.getLogic())
         {
-            if(this.getLet1().equals(p.getLet1()) && this.getLet2().equals(p.getLet2()) )
+            if(this.getLet1().equals(p.getLet1())  && this.getLet2().equals(p.getLet2()))
                 return true;
             else
                 return false;
